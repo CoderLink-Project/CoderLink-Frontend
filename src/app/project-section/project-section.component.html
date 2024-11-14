@@ -1,0 +1,49 @@
+<div class="project-section-container">
+    <header class="navbar">
+      <div class="logo">
+      </div>
+      <div class="search-bar">
+        <input type="text" placeholder="Buscar trabajos..." />
+        <button>Buscar</button>
+      </div>
+    </header>
+  
+
+    <div class="main-content">
+      <aside class="filter-sidebar">
+        <h3>Filtrar por:</h3>
+        <div class="filter-category">
+          <h4>Categorías</h4>
+          <ul>
+            <li><input type="checkbox" /> Desarrollo Web</li>
+            <li><input type="checkbox" /> Diseño Gráfico</li>
+            <li><input type="checkbox" /> Escritura</li>
+          </ul>
+        </div>
+  
+        <div class="filter-price">
+          <h4>Rango de Precio</h4>
+          <input type="range" min="0" max="1000" />
+        </div>
+  
+        <div class="filter-location">
+          <h4>Ubicación</h4>
+          <input type="text" placeholder="Ciudad o País" />
+        </div>
+  
+        <button class="apply-filters-btn">Aplicar Filtros</button>
+      </aside>
+
+      <section class="jobs-listing">
+        <div class="job-card" *ngFor="let job of jobs">
+          <h3>{{ job.title }}</h3>
+          <p>{{ job.description }}</p>
+          <div class="job-details">
+            <span>Precio: {{ job.price | currency }}</span>
+            <span>Ubicación: {{ job.location }}</span>
+          </div>
+          <button (click)="viewJobDetails(job.id)">Ver Detalles</button>
+        </div>
+      </section>
+    </div>
+  </div>
