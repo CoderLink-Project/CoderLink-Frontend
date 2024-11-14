@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="back-home-container">
+      <button class="back-home-btn" (click)="goToHome()">Regresar</button>
+    </div>
+  
+    <h2>Eliminar Proyecto</h2>
+    <div class="form-group">
+      <label for="projectId">ID del Proyecto:</label>
+      <input type="number" id="projectId" [(ngModel)]="projectId" placeholder="Ingresa el ID del proyecto" required />
+    </div>
+  
+    <button (click)="onDelete()" class="delete-btn">Eliminar Proyecto</button>
+  </div>
+  
