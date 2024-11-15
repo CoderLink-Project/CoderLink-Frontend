@@ -1,6 +1,6 @@
 // src/environments/environment.development.ts
 export const environment = {
-    production: false,
+    production: true,
     apiUrl: '' // Cambia a la URL de desarrollo
   };
   
