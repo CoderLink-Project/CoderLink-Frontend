@@ -13,8 +13,8 @@ interface Freelancer {
   selector: 'app-revisar-portafolio-freelancer',
   standalone: true,
   imports: [CommonModule, FormsModule],
-  templateUrl: './revisar-portafolio-freelancer.component.html',
-  styleUrl: './revisar-portafolio-freelancer.component.scss'
+  templateUrl: './review-freelancer-portfolio.component.html',
+  styleUrl: './review-freelancer-portfolio.component.scss'
 })
 export class RevisarPortafolioFreelancerComponent {
   constructor (private router: Router) {}
