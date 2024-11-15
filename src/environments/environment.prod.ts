@@ -1,3 +1,4 @@
 export const environment = {
-    BASE_URL: 'http://localhost:8080/api/v1'
+    production:true,
+    apiUrl: 'https://coderlink-api-latest.onrender.com/api/v1'
 };
