@@ -82,8 +82,7 @@ export class ChangePasswordComponent implements OnInit{
       alert("Error de ingreso de datos")
     }
   }
-
   goBack() {
-    this.router.navigate(['/edit-profile-customer']); // Redirige a la página principal
+    this.router.navigate(['/edit-profile-customer']); 
   }
 }
