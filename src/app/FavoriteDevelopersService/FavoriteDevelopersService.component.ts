@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-View-available-projects',
+  selector: 'app-FavoriteDevelopersService',
   standalone: true,
   imports: [],
-  styleUrl: './View-available-projects.component.scss'
+  styleUrl: './FavoriteDevelopersService.component.scss'
 })
 export class ServiceComponent {
 
