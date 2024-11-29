@@ -61,15 +61,13 @@ export class EditProfileFreelancerComponent implements OnInit{
   get paymentRate(){
     return this.editForm.get('paymentRate')
   }
-
   get portfolio(){
     return this.editForm.get('portfolio')
   }
-
   get code(){
     return this.verifyCodeForm.get('code')
   }
-
+  
   save(): void {
     const formData = this.editForm.value;
     // Solicita el envío del código de verificación
