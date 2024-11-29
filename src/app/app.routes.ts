@@ -34,5 +34,11 @@ export const routes: Routes = [
     { path: 'perfil-developer', 
         component: PerfilDeveloperComponent
     },
+    { path: 'recuperar-password', 
+        component: RecuperarPasswordComponent
+    },   
+    { path: 'reset-password', 
+        component: ResetPasswordComponent
+    }, 
                 
 ];
