@@ -37,18 +37,13 @@ export class HistorialProyectosComponent implements OnInit{
 
   // Método para ver detalles del proyecto
   verProyecto(id: number) {
-    // Aquí podrías navegar a una página de detalles o abrir un modal con la información del proyecto.
     this.router.navigate(['/view-project/'+id]);
   }
-
-  // Método para eliminar un proyecto
+  navigateBack() {
+    this.router.navigate(['/profile-customer']);
+  }
   eliminarProyecto(id: number) {
     this.projectApiService.deleteProject(id).then(() => window.location.reload())
-  }
-
-  navigateBack() {
-    // Cambia '/freelancer' por la ruta que deseas
-    this.router.navigate(['/profile-customer']);
   }
 
   formatDate(dateTime: string): string {
