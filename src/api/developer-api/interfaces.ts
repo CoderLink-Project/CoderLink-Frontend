@@ -25,4 +25,10 @@ export interface CreateDeveloperRequest{
     workExperience: string
     skills: string[]
 }
-
+export interface UpdateDeveloper{
+    username: string
+    portfolio: string
+    paymentRate: number
+    email: string
+    password: string
+}
