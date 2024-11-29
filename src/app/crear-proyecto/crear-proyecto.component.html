@@ -29,14 +29,15 @@
             La presentacion es requerida
         </div>
       </div>
-
+      
       <label for="revision">Revisión:</label>
       <input formControlName="revision" type="text" id="revision" formControlName="revision" required>
       <div *ngIf="proyectoForm.get('revision')?.hasError('required') || proyectoForm.get('revision')?.hasError('maxlength')">
         <div *ngIf="proyectoForm.get('revision')?.hasError('required')">
-            La revisión es requerida
+            La revisión es requerida.
         </div>
       </div>
+      
 
       <label for="categoria">Categoría:</label>
       <input formControlName="categoria" type="text" id="categoria" formControlName="categoria" required>
