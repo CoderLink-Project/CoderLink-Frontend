@@ -1,0 +1,41 @@
+<div class="forgot-page">
+<div class="forgot-container">
+    <h2>Restablecer Contraseña</h2>
+    <form (ngSubmit)="resetPassword()" [formGroup]="recoveryPasswordForm">
+      <label for="email">Correo Electrónico</label>
+      <input type="email"
+      formControlName = "email" 
+             id="email" 
+             placeholder="Ingresa tu correo electrónico" 
+             name="email" 
+             required 
+             email 
+             >
+
+             <div *ngIf="email.invalid && (email.dirty || email.touched)" class="text-danger">
+              <div *ngIf="email.errors?.['required']">
+                El email es requerido
+              </div>
+              <div *ngIf="email.errors?.['email']">
+                Formato invalido
+              </div>
+            </div>
+
+            <div *ngIf="formError != ''">
+              <p class="text-danger text-xs italic">{{formError}}</p>
+            </div>
+  
+      <button type="submit" [disabled]="recoveryPasswordForm.invalid">Enviar</button>
+    </form>
+  
+    <p class="back-to-login"><a [routerLink]="'/login'">Volver a iniciar sesión</a></p>
+  </div>
+</div>
+
+<div *ngIf="showSuccessModal" class="modal">
+  <div class="modal-content">
+     <h3>¡Correo de recuperación enviado!</h3>
+  <p>Se ha enviado un correo a tu cuenta. Si no lo ves en la bandeja de entrada, revisa la carpeta de spam.</p>
+ <button (click)="closeModal()">Cerrar</button>
+</div>
+</div>

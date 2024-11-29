@@ -1,0 +1,77 @@
+<div class="container">
+  <div class="back-home-container">
+    <button class="back-home-btn" (click)="goToHome()">Regresar</button>
+  </div>
+    <h2>Crear Proyecto</h2>
+    <form [formGroup]="proyectoForm" (ngSubmit)="onSubmit()">
+      
+      <label for="nombre">Nombre del Proyecto:</label>
+      <input formControlName="nombre" type="text" id="nombre" formControlName="nombre" required>
+      <div *ngIf="proyectoForm.get('nombre')?.hasError('required') || proyectoForm.get('nombre')?.hasError('maxlength')">
+        <div *ngIf="proyectoForm.get('nombre')?.hasError('required')">
+            El nombre es requerido
+        </div>
+      </div>
+      
+      <label for="descripcion">Descripción:</label>
+      <textarea formControlName="descripcion" id="descripcion" formControlName="descripcion" rows="4" required></textarea>
+      <div *ngIf="proyectoForm.get('descripcion')?.hasError('required') || proyectoForm.get('descripcion')?.hasError('maxlength')">
+        <div *ngIf="proyectoForm.get('descripcion')?.hasError('required')">
+            La descripción es requerida
+        </div>
+      </div>
+      
+      
+      <label for="presentacion">Presentación:</label>
+      <input formControlName="presentacion" type="text" id="presentacion" formControlName="presentacion" required>
+      <div *ngIf="proyectoForm.get('presentacion')?.hasError('required') || proyectoForm.get('presentacion')?.hasError('maxlength')">
+        <div *ngIf="proyectoForm.get('presentacion')?.hasError('required')">
+            La presentacion es requerida
+        </div>
+      </div>
+
+      <label for="revision">Revisión:</label>
+      <input formControlName="revision" type="text" id="revision" formControlName="revision" required>
+      <div *ngIf="proyectoForm.get('revision')?.hasError('required') || proyectoForm.get('revision')?.hasError('maxlength')">
+        <div *ngIf="proyectoForm.get('revision')?.hasError('required')">
+            La revisión es requerida
+        </div>
+      </div>
+
+      <label for="categoria">Categoría:</label>
+      <input formControlName="categoria" type="text" id="categoria" formControlName="categoria" required>
+      <div *ngIf="proyectoForm.get('categoria')?.hasError('required') || proyectoForm.get('categoria')?.hasError('maxlength')">
+        <div *ngIf="proyectoForm.get('categoria')?.hasError('required')">
+            La categoría es requerido
+        </div>
+      </div>
+
+      <label for="calificacion">Calificación:</label>
+      <select formControlName="calificacion" id="calificacion" formControlName="calificacion">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+
+      <label for="tarifa">Tarifa:</label>
+      <input 
+        type="number" 
+        id="tarifa" 
+        formControlName="tarifa" 
+        min="1" 
+        step="0.01" 
+        required>
+        <div *ngIf="proyectoForm.get('tarifa')?.invalid && proyectoForm.get('tarifa')?.touched">
+          <small *ngIf="proyectoForm.get('tarifa')?.errors?.['required']">La tarifa es requerida.</small>
+          <small *ngIf="proyectoForm.get('tarifa')?.errors?.['min']">La tarifa debe ser mayor a 0.</small>
+        </div>
+
+      <div *ngIf="formError !== ''">
+        <p class="text-danger text-xs italic">{{formError}}</p>
+      </div>
+      
+      <button type="submit" class="submit-btn">Crear Proyecto</button>
+    </form>
+  </div>

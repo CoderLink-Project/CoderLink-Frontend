@@ -1,0 +1,115 @@
+/* Página de registro */
+.join-page {
+  height: 100vh; /* Ocupa toda la pantalla */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #6fa1a4; /* Color de fondo */
+}
+
+/* Contenedor del formulario */
+.join-container {
+  background-color: white;
+  padding: 40px;
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+  }
+
+  .options {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+
+    .option-card {
+      background-color: #f9f9f9;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      width: 45%;
+      padding: 20px;
+      cursor: pointer;
+      transition: border-color 0.3s ease;
+
+      .icon {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+      }
+
+      p {
+        font-size: 1rem;
+        margin-bottom: 10px;
+      }
+
+      input[type="radio"] {
+        margin-top: 10px;
+      }
+
+      &:hover {
+        border-color: #007bff; /* Cambia el borde al pasar el mouse */
+      }
+
+      &.selected {
+        border-color: #007bff; /* Cambia el borde cuando está seleccionado */
+      }
+    }
+  }
+
+  .create-account-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: darken(#007bff, 10%);
+    }
+
+    &:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+  }
+
+  p {
+    margin-top: 20px;
+    font-size: 0.9rem;
+
+    a.login-link {
+      color: #007bff;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+/* Responsivo para pantallas pequeñas */
+@media (max-width: 768px) {
+  .join-container {
+    width: 90%; /* Hace que el formulario ocupe un 90% del ancho de la pantalla en móviles */
+  }
+
+  .options {
+    flex-direction: column;
+
+    .option-card {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+}

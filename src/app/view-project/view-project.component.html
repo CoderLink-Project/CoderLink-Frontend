@@ -1,0 +1,32 @@
+<div class="view-project-container">
+  <button class="back-btn" (click)="goBack()">⬅ Regresar</button>
+
+    <h2>Detalles del Proyecto</h2>
+    
+    <div class="project-info">
+      <p><strong>ID del Proyecto:</strong> {{ project?.id }}</p>
+      <p><strong>Nombre del Proyecto:</strong> {{ project?.name }}</p>
+      <p><strong>Descripción:</strong> {{ project?.description }}</p>
+      <p><strong>Presentación:</strong> {{ project?.presentation }}</p>
+      <p><strong>Estado:</strong> {{ project?.status }}</p>
+      <p><strong>Revisión:</strong> {{ project?.revision }}</p>
+      <p><strong>Categoría:</strong> {{ project?.category }}</p>
+      <p><strong>Calificación:</strong> {{ project?.qualification }}</p>
+      <p><strong>Presupuesto:</strong> $ {{project?.budget}}</p>
+      <div *ngIf="devName !== ''"><p><strong>A cargo de:</strong> {{ devName }}</p></div>
+    </div>
+
+    <div *ngIf="project?.postulations?.length && !devName">
+      <h2>Postulaciones</h2>
+    <div *ngFor = "let postulation of project?.postulations">
+      <p><strong>ID de la postulación:</strong> {{ postulation.id }}</p>
+      <p><strong>Nombre del Developer:</strong> {{ postulation.devName }}</p>
+      <button class="edit-btn" (click)="hireDev(postulation.id)">Ofrecer Contrato</button>
+    </div>
+    </div>
+    
+    <div class="project-actions">
+      <button class="edit-btn" (click)="editProject()">Solicitar Cambios</button>
+      <button class="delete-btn" (click)="deleteProject()">Eliminar</button>
+    </div>
+  </div>

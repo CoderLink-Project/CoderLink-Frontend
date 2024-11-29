@@ -1,0 +1,14 @@
+<!-- Botón de regresar al Perfil de Cliente -->
+<button class="back-to-profile-btn" (click)="goToProfileCustomer()">Volver al Perfil</button>
+
+<!-- Contenedor de Freelancers Favoritos -->
+<div class="favoritos-container">
+  <h2>Freelancers Favoritos</h2>
+  <div *ngFor="let freelancer of customer?.favoritesDevs" class="freelancer-card">
+    <h3>{{ freelancer.names }} {{ freelancer.lastNames }}</h3>
+    <p>{{ freelancer.workExperience }}</p>
+    <p>⭐5</p>
+    <p>Tarifa: ${{ freelancer.paymentRate }}/h</p>
+    <button (click)="eliminarDeFavoritos(freelancer)">Eliminar de Favoritos</button>
+  </div>
+</div>

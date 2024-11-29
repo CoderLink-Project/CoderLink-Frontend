@@ -1,0 +1,19 @@
+<div class="modify-project-container">
+    <h2>Modificar Proyecto</h2>
+    
+    <div class="project-info">
+      <h3>{{ project?.name }}</h3>
+      <p><strong>Nombre del Proyecto:</strong> {{ project?.name }}</p>
+      <p><strong>Descripción:</strong> {{ project?.description }}</p>
+      <p><strong>Presentación:</strong> {{ project?.presentation }}</p>
+      <p><strong>Estado:</strong> {{ project?.status }}</p>
+      <p><strong>Revisión:</strong> {{ project?.revision }}</p>
+      <p><strong>Categoría:</strong> {{ project?.category }}</p>
+      <p><strong>Calificación:</strong> {{ project?.qualification }}</p>
+    </div>
+    
+    <div class="project-actions">
+      <button class="save-btn" (click)="saveModify()">Guardar</button>
+      <button class="cancel-btn" (click)="cancelModify()">Cancelar</button>
+    </div>
+  </div>

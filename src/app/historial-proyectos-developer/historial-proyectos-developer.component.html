@@ -1,0 +1,30 @@
+<div class="historial-proyectos-container">
+    <h2>Historial de Proyectos</h2>
+    <div class="back-button-container"> 
+      <button class="btn btn-secondary mb-4" (click)="navigateBack()">Regresar a Perfil</button>
+    </div>
+    <div *ngFor="let project of projectsWithAcceptedPostulations" class="card-proyecto">
+      <div class="proyecto-header">
+        <span class="proyecto-nombre">"{{ project.name }}"</span>
+        <span [ngClass]="{'activo': project.status !== 'COMPLETE', 'terminado': project.status === 'COMPLETE'}">
+          {{ project.status === 'COMPLETE' ? 'Terminado' : 'Activo' }}
+        </span>
+        <select [(ngModel)]="selectedValue" (change)="onStatusChange($event, project.id)">
+          <option value="TODO">Por hacer</option>
+          <option value="PROGRESS">En proceso</option>
+          <option value="COMPLETE">Terminado</option>
+        </select>
+      </div>
+      
+      <div class="proyecto-info">
+        <div class="proyecto-fechas">
+          <p>Inicio: {{ formatDate(project.createdAt.toString()) }}</p>
+          <p>Actualizado: {{ project.updateAt ? formatDate(project.updateAt.toString()) : 'Sin actualizaciones' }}</p>
+        </div>
+        <p>Completado: {{ calculateProgress(project.status) }}%</p>
+        <div class="progress-bar">
+          <div class="progress" [style.width]="calculateProgress(project.status) + '%'"></div>
+        </div>
+      </div>
+    </div>
+  </div>  
