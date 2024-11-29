@@ -20,9 +20,8 @@ export class ChangePasswordFreelancerComponent {
 
       cambiarContrasena(event: Event): void {
          event.preventDefault();
-
-    // Validar si la nueva contraseña cumple con los requisitos
-    if (this.newPassword.length >= 6 && this.newPassword === this.confirmPassword) {
+      //se agrego la validacion a la nueva contraseña
+if (this.newPassword.length >= 6 && this.newPassword === this.confirmPassword) {
       // Simulamos la lógica de cambio de contraseña
       // Mostramos la alerta de éxito
       window.alert('Contraseña cambiada con éxito');
