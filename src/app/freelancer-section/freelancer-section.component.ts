@@ -80,8 +80,6 @@ export class FreelancerSectionComponent implements OnInit{
       this.freelancers = await this.developerApiService.listDevelopers()
     }
   }
-
-  // Método para ver el perfil del freelancer
   viewProfile(freelancer: Developer) {
     this.router.navigate(['/revisar-portafolios-freelancer/'+freelancer.username]);
   }
