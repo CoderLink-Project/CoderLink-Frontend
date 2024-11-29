@@ -5,11 +5,11 @@
     <h2>Crear Proyecto</h2>
     <form [formGroup]="proyectoForm" (ngSubmit)="onSubmit()">
       
-      <label for="nombre">Nombre del Proyecto:</label>
+      <label for="nombre">Titulo del Proyecto:</label>
       <input formControlName="nombre" type="text" id="nombre" formControlName="nombre" required>
       <div *ngIf="proyectoForm.get('nombre')?.hasError('required') || proyectoForm.get('nombre')?.hasError('maxlength')">
         <div *ngIf="proyectoForm.get('nombre')?.hasError('required')">
-            El nombre es requerido
+            El nombre es requerido.
         </div>
       </div>
       
@@ -17,7 +17,7 @@
       <textarea formControlName="descripcion" id="descripcion" formControlName="descripcion" rows="4" required></textarea>
       <div *ngIf="proyectoForm.get('descripcion')?.hasError('required') || proyectoForm.get('descripcion')?.hasError('maxlength')">
         <div *ngIf="proyectoForm.get('descripcion')?.hasError('required')">
-            La descripción es requerida
+            La descripción es requerido.
         </div>
       </div>
       
@@ -26,7 +26,7 @@
       <input formControlName="presentacion" type="text" id="presentacion" formControlName="presentacion" required>
       <div *ngIf="proyectoForm.get('presentacion')?.hasError('required') || proyectoForm.get('presentacion')?.hasError('maxlength')">
         <div *ngIf="proyectoForm.get('presentacion')?.hasError('required')">
-            La presentacion es requerida
+            La presentacion es requerido.
         </div>
       </div>
       
@@ -34,7 +34,7 @@
       <input formControlName="revision" type="text" id="revision" formControlName="revision" required>
       <div *ngIf="proyectoForm.get('revision')?.hasError('required') || proyectoForm.get('revision')?.hasError('maxlength')">
         <div *ngIf="proyectoForm.get('revision')?.hasError('required')">
-            La revisión es requerida.
+            La revisión es requerido.
         </div>
       </div>
       
