@@ -1,11 +1,11 @@
 import { Routes } from '@angular/router';
-import { RevisarPortafolioFreelancerComponent } from './review-freelancer-portfolio/review-freelancer-portfolio.component';
+import { ConfirmPaidComponent } from './confirm-paid/confirm-paid.component';
 
 export const routes: Routes = [
-    { path: 'review-freelancer-portfolio', component: RevisarPortafolioFreelancerComponent},
+    { path: 'confirm-paid', component: ConfirmPaidComponent},
     {
         path: '',
-        redirectTo: 'review-freelancer-portfolio',
+        redirectTo: 'confirm-paid',
         pathMatch: 'full'
     }
 ];
