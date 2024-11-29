@@ -1,9 +1,6 @@
-
-export interface AuthUserResponse{
+export interface AuthenticationUserRequest{
     username: string
-    message: string
-    token: string
-    status: boolean
+    password: string
 }
 
 export interface ChangePasswordRequest{
@@ -22,10 +19,4 @@ export interface RecoveryPasswordRequest{
 
 export interface RecoveryPasswordResponse{
     message: string
-}
-export interface GetUserResponse{
-    username: string
-}
-export interface GetAuthorites{
-    authorities: string
 }
