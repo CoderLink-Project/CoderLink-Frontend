@@ -12,6 +12,9 @@ import { AuthResponse } from '../storage-service/interfaces';
   providedIn: 'root'
 })
 export class AuthApiService {
+  currentUserData : BehaviorSubject<string> = new BehaviorSubject<string>("");
+  currentUserLoginOn: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  
 
   httpClient = inject(HttpClient);
   storageService = inject(StorageService)
@@ -27,8 +30,17 @@ export class AuthApiService {
   }
 
   login(user: AuthenticationUserRequest): Observable<any> {
-    return this.httpClient.post<any>(environment.urlBack + '/auth/login/', user)
-    .pipe(tap(response => this.storageService.setAuthData(response)));
+     return this.httpClient.post<any>(environment.urlBack + '/auth/login/', user).pipe(
+      tap((userData) => {
+        if (typeof window !== 'undefined') {
+          sessionStorage.setItem("token", userData.token);
+        }
+        this.currentUserData.next(userData.token);
+        this.currentUserLoginOn.next(true);
+      }),
+      map((userData) => userData.token),
+      catchError(this.handleError)
+    );
   }
   
 
